@@ -1,0 +1,55 @@
+import styled from 'styled-components'
+
+export const Container = styled.div`
+  min-height: 100px;
+  height: 15vh;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 50px;
+  align-items: center;
+  width: 100%;
+  background-color: ${(props) =>
+    props.changeBackground ? '#000' : 'transparent'};
+  transition: background-color 0.6s ease-in-out;
+
+  img {
+    width: 15%;
+  }
+`
+
+export const Menu = styled.ul`
+  display: flex;
+  list-style: none;
+  gap: 20px;
+`
+
+export const Li = styled.li`
+  font-size: 28px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &&::after {
+    content: '';
+    height: 3px;
+    width: ${(props) => (props.isActive ? '100%' : '0')};
+    background-color: #189b20;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+`
