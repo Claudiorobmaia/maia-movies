@@ -15,9 +15,7 @@ function Modal({ movieId, setShowModal, type }) {
         resultado = await getMovieVideos(movieId)
       }
 
-      console.log('Resultado da API:', resultado)
-      console.log('movieId:', movieId)
-      console.log('type:', type)
+      
 
       setMovie(resultado)
     }
