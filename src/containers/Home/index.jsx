@@ -3,7 +3,7 @@ import Modal from '../../components/Modal'
 import { useState, useEffect } from 'react'
 import Button from '../../components/Button'
 import Slider from '../../components/Slider'
-import { getImages } from '../../utils/getimages'
+import { getImages } from '../../utils/getImages'
 import { useNavigate } from 'react-router-dom'
 import {
   getMovies,
