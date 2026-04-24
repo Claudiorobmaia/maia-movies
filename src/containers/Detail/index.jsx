@@ -26,10 +26,10 @@ function Detail() {
       const isSerie = type === 'tv'
 
       Promise.all([
-        isSerie ? getSerieById(id)      : getMovieById(id),
-        isSerie ? getSerieVideos(id)    : getMovieVideos(id),
-        isSerie ? getSerieCredits(id)   : getMovieCredits(id),
-        isSerie ? getSerieSimilar(id)   : getMovieSimilar(id)
+        isSerie ? getSerieById(id) : getMovieById(id),
+        isSerie ? getSerieVideos(id) : getMovieVideos(id),
+        isSerie ? getSerieCredits(id) : getMovieCredits(id),
+        isSerie ? getSerieSimilar(id) : getMovieSimilar(id)
       ])
         .then(([movie, videos, credits, similar]) => {
           setMovie(movie)
@@ -67,8 +67,8 @@ function Detail() {
                   <iframe
                     src={`https://www.youtube.com/embed/${video.key}`}
                     title="YouTube video player"
-                    height="500"
                     width="100%"
+                    style={{ aspectRatio: '16/9', height: 'auto', border: 'none' }}
                   ></iframe>
                 </div>
               ))}

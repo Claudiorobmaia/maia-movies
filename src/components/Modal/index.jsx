@@ -15,7 +15,7 @@ function Modal({ movieId, setShowModal, type }) {
         resultado = await getMovieVideos(movieId)
       }
 
-      
+
 
       setMovie(resultado)
     }
@@ -29,8 +29,8 @@ function Modal({ movieId, setShowModal, type }) {
           <iframe
             src={`https://www.youtube.com/embed/${movie[0].key}`}
             title="YouTube video player"
-            height="500"
             width="100%"
+            height="100%"
           ></iframe>
         </Container>
       )}
