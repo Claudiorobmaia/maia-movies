@@ -22,7 +22,7 @@ export const Background = styled.div`
     opacity: 0.5;
   }
 
-   &::after {                 /* 👈 adiciona esse bloco inteiro */
+  &::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -37,8 +37,25 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
+  width: 100%;
   max-width: 1500px;
+  z-index: 2;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px;
+  }
+
+  @media (max-width: 768px) {
+    gap: 18px;
+    padding: 16px;
+  }
+
+  @media (max-width: 480px) {
+    gap: 12px;
+    padding: 10px;
+  }
 `
 
 export const Info = styled.div`
@@ -49,24 +66,60 @@ export const Info = styled.div`
   h1 {
     font-size: 50px;
     font-weight: 700;
-    color: #fff;
+    color: #ffff;
   }
 
   p {
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
+    color: #ffff;
     margin-top: 30px;
     margin-bottom: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    text-align: center;
+
+    h1 { font-size: 2.5rem; }
+    p  { font-size: 16px; margin-top: 16px; }
+  }
+
+  @media (max-width: 768px) {
+    padding: 14px;
+
+    h1 { font-size: 2rem; }
+    p  { font-size: 14px; }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
+
+    h1 { font-size: 1.6rem; }
+    p  { font-size: 13px; }
   }
 `
 
 export const Poster = styled.div`
   z-index: 2;
+  flex-shrink: 0;
 
   img {
     width: 300px;
     border-radius: 10px;
+    display: block;
+  }
+
+  @media (max-width: 1024px) {
+    img { width: 220px; }
+  }
+
+  @media (max-width: 768px) {
+    img { width: 180px; }
+  }
+
+  @media (max-width: 480px) {
+    img { width: 140px; }
   }
 `
 
@@ -74,4 +127,38 @@ export const ContainerButtons = styled.div`
   display: flex;
   gap: 20px;
   margin-top: 30px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+`
+
+export const MoviesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  padding: 24px;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 14px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
 `

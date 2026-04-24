@@ -16,3 +16,20 @@ export default createGlobalStyle`
   }
 
   `
+
+export const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+
+  body {
+    overflow-x: hidden; /* evita scroll horizontal no celular */
+  }
+`;
